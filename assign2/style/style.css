@@ -1,0 +1,1051 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #b4ceec, #f6f6f7, #bcaccf); 
+    color: #333333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*<---------------------------------------- Home Page -------------------------------------->*/
+
+/* Homepage specific container */
+.homepage-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Logo link styles (applies to homepage and login) */
+.logo-link {
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333333;
+    transition: all 0.4s ease;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* Hover effect for logo links (homepage, login) */
+.logo-link:hover {
+    background: linear-gradient(90deg, #4d85d3, #985cc9, #d68cac); /* Gradient effect */
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: brightness(1.2); 
+    transform: scale(1.05); 
+}
+
+/* Specific styling for the rotated logo on the sign-up page */
+.rotated-logo {
+    position: absolute;
+    margin-left: -550px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333333;
+    text-decoration: none;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+/* Hover effect for the rotated logo on the sign-up page */
+.rotated-logo:hover {
+    background: linear-gradient(90deg, #4d85d3, #985cc9, #d68cac); 
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: translateY(-50%) rotate(-90deg) scale(1.1); 
+}
+
+/* Pop effect keyframes for hover effect */
+@keyframes pop {
+    0% {
+        transform: scale(1) rotate(-90deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-90deg);
+    }
+    100% {
+        transform: scale(1) rotate(-90deg);
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #F0F0F0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Positioning the rotated logo */
+.rotated-logo-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Navbar Links */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #4d85d3, #c6c8c9);
+    text-decoration: none;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background: linear-gradient(135deg, #985cc9, #D1BCE3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-color: #E0E0E0;
+    padding-left: 25px;
+}
+
+/* Footer inside sidebar */
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 0.9rem;
+    text-align: flex-start;
+    color: #7324c2;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.sidebar-footer:hover {
+    color: #5349ad;
+}
+
+/* Content Area */
+.container {
+    flex-grow: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Email link specific styles */
+a[href^="mailto"] {
+    color: #4A90E2;
+    text-decoration: none;
+}
+
+a[href^="mailto"]:hover {
+    text-decoration: underline;
+}
+
+/* Success or Failure Message */
+.success {
+    color: #28A745;
+    font-weight: 600;
+}
+
+.error {
+    color: red; 
+    font-size: 0.9rem; 
+    margin-left: 10px;
+    display: block; 
+    margin-top: 5px; 
+}
+
+.signup-body {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, #96e1eb, #f4f3f5, #e2a4e2);
+    color: #333;
+    margin: 0;
+    height: 100vh;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, #e3b6f5, #f4f3f5, #4b86d3);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Signup and Login Container */
+.signup-container, .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    height: 100vh;
+}
+
+/* Signup and Login Box */
+.signup-box, .login-box {
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.9), rgba(255, 255, 255, 0.8), rgba(230, 230, 250, 0.9));
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Keyframes for caret blink */
+@keyframes caret {
+    50% { border-color: transparent; }
+}
+
+/* Heading animation for signup/login */
+.typing-effect {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid;
+    width: 100%;
+    display: inline-block;
+    animation: typing 4s steps(30, end), caret 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+}
+
+/* Remove the blinking caret after typing */
+.no-caret {
+    border-right: none;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    color: #333;
+}
+
+input::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #63A4FF;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Radiant button styles with hover effect */
+button.register, button.login {
+    background: linear-gradient(135deg, #4d85d3, #b7cae6);
+    color: white;
+    transition: all 0.4s ease;
+}
+
+button.register:hover, button.login:hover {
+    background: linear-gradient(135deg, #6A4DD3, #85A4FF);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+button.clear {
+    background: linear-gradient(135deg, #ad84d1, #F0F0F0);
+    color: white;
+    transition: all 0.4s ease;
+}
+
+button.clear:hover {
+    background: linear-gradient(135deg, #d68cac, #F0E0F0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Home Link */
+a.home-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #4d85d3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.home-link:hover {
+    text-decoration: underline;
+    color: #6A4DD3;
+}
+
+/* Style for the "Already a user" section */
+.existing-user {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #555;
+    text-align: center;
+}
+
+.existing-user a {
+    color: #4d85d3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.existing-user a:hover {
+    color: #6A4DD3;
+    text-decoration: underline;
+}
+
+/* New specific login-logo class for the login page */
+.login-logo {
+    text-decoration: none;
+    font-family: 'Caveat', cursive; 
+    font-size: 3rem; 
+    font-weight: bold;
+    color: #333333; 
+    position: absolute;
+    top: 190px; 
+}
+
+/* Hover effect for the login-logo class */
+.login-logo:hover {
+    background: linear-gradient(90deg, #4d85d3, #985cc9, #d68cac); 
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+}
+
+/* <---------------------------------------- Friend List --------------------------------------> */
+
+/* Friend List Body */
+.friendlist-body {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, #f3f190, #b4ceec, #c5c1c5);
+    color: #333;
+    margin: 0;
+    height: auto;
+}
+
+/* Friend List Main Content */
+.friendlist-main-content {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    height: auto; 
+}
+
+/* Friend List Box Container */
+.friendlist-box-container {
+    background: linear-gradient(90deg, #c2e5eb, #fafafd, #fafafd, #e0c5de);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Friends List Container */
+.friendlist-container {
+    max-height: 450px;
+    overflow-y: auto;
+    width: 80%;
+}
+
+/* Friends List */
+.friendlist-friends-list {
+    border-collapse: collapse;
+}
+
+/* Friends List Table Cells */
+.friendlist-friends-list td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Friend List Item */
+.friendlist-friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 100%;
+    overflow: hidden; 
+    box-sizing: border-box; 
+}
+
+.friendlist-friend-item:hover {
+    background: linear-gradient(90deg, #e0c5de, #fafafd, #fafafd);
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.friendlist-friend-item span {
+    font-size: 1.2rem; 
+    flex-grow: 1; 
+    max-width: 70%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* Unfriend Button */
+.friendlist-unfriend-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    flex-shrink: 0; 
+}
+
+.friendlist-unfriend-button:hover {
+    background-color: #c82333;
+}
+
+/* <---------------------------------------- Sidebar --------------------------------------> */
+
+/* Sidebar */
+.friendlist-sidebar {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Friend System Logo */
+.friendlist-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
+    background: linear-gradient(90deg, #4d85d3, #985cc9, #d68cac);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    animation: logo-animation 3s infinite; 
+}
+
+/* Keyframes for Sidebar Logo Animation */
+@keyframes logo-animation {
+    0% {
+        transform: scale(1.05) rotate(0deg);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+        filter: brightness(1.5);
+    }
+    100% {
+        transform: scale(1.05) rotate(0deg);
+        filter: brightness(1);
+    }
+}
+
+/* h2 for the Friend List */
+.friendlist-box-container h2 {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* <---------------------------------------- Sidebar Buttons --------------------------------------> */
+
+/* Button Styling */
+.sidebar-button {
+    position: relative;
+    background-color: white; 
+    margin: 10px 0; 
+    width: 180px; 
+    height: 60px; 
+    overflow: hidden; 
+    text-align: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none; 
+    color: transparent; 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    background-image: linear-gradient(135deg, #4d85d3, #985cc9); 
+}
+
+/* Button Hover State */
+.sidebar-button:hover {
+    background: linear-gradient(135deg, #6A4DD3, #85A4FF);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Sliding Grey Box Inside the Button */
+.sidebar-button .btnTwo {
+    position: absolute;
+    width: 180px; 
+    height: 60px; 
+    left: -180px; 
+    top: 0;
+    background-image: linear-gradient(135deg, #4d85d3, #985cc9); 
+    transition: left 0.1s; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text for the Main Button */
+.sidebar-button .btnText {
+    color: transparent;
+    background-image: linear-gradient(135deg, #4d85d3, #985cc9); 
+    -webkit-background-clip: text;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: margin-left 0.3s, color 0.3s; 
+}
+
+/* Text for the Sliding Box */
+.sidebar-button .btnText2 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 60px; 
+}
+
+/* Hover effect - Sliding in the Grey Box */
+.sidebar-button:hover .btnTwo {
+    left: 0; 
+}
+
+.sidebar-button:hover .btnText {
+    margin-left: 30px; 
+    color: white; 
+}
+
+/* Active Button Effect */
+.sidebar-button:active {
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Container for Layout */
+.sidebar-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; 
+}
+
+.sidebar-button-container .sidebar-button {
+    margin-bottom: 10px; 
+}
+
+/* <---------------------------------------- Pagination --------------------------------------> */
+
+/* Pagination Styling */
+.pagination-right {
+    display: center;
+    justify-content: flex-end; 
+    align-items: center;
+    margin-bottom: 30px; 
+    margin-top: 10px;
+    width: 100%;
+}
+
+.pagination-btn {
+    background-color: #4d85d3;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+    background-color: #6A4DD3;
+}
+
+/* Disabled button */
+.pagination-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Current page indicator */
+.pagination-btn.current {
+    background-color: #4d85d3;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+/* <---------------------------------------- Animated Greeting --------------------------------------> */
+
+/* Animated Greeting Message */
+.animated-greeting-container {
+    text-align: center;
+    padding-bottom: 0px; 
+}
+
+.animated-greeting {
+    font-family: "Caveat", cursive;
+    font-size: 4.5rem;
+    font-weight: 600;
+    animation: greeting-color-change 4s linear infinite;
+}
+
+@keyframes greeting-color-change {
+    0% { color: #e5f326; }
+    30% { color: #1175c7; }
+    50% { color: #7b11f5; }
+    100% { color: #c411db; }
+}
+
+.animated-profile-name {
+    color: #141414;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+
+/* <---------------------------------------- Add Friend --------------------------------------> */
+
+/* General Styles */
+.friendadd-body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #8ab5e6, #b9bdbe, #a988d1); 
+    color: #333333;
+    display: flex;
+    height: auto;
+}
+
+/* Add Friend Main Content */
+.addfriend-box-container {
+    background: linear-gradient(90deg, #bb9bdf, #fafafd, #fafafd, #9fb1ec);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add Friends List Container */
+.addfriend-container {
+    max-height: 500px;
+    overflow-y: auto;
+    width: 80%; 
+}
+
+/* Add Friends List */
+.addfriend-friends-list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Add Friends List Table Cells */
+.addfriend-friends-list td {
+    padding: 10px;
+    text-align: center; 
+    vertical-align: middle; 
+}
+
+/* Add Friend Item */
+.addfriend-friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.addfriend-friend-item:hover {
+    background: linear-gradient(90deg, #bfd5f1, #fafafd, #fafafd,  #fafafd);
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(227, 183, 235, 0.1);
+}
+
+/* Mutual Friends Count */
+.mutual-friends {
+    font-weight: 100;
+    font-size: 1rem;
+    color: #FF4500;
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    animation: glow 1.5s infinite alternate; 
+    padding: 10px;
+    min-width: 150px;  
+}
+
+/* Animation for Mutual Friends */
+@keyframes glow {
+    from {
+        color: #850b74;
+        text-shadow: 0 0 5px #d18eda, 0 0 10px #99478e, 0 0 15px #c98ec1;
+    }
+    to {
+        color: #2c0d75;
+        text-shadow: 0 0 10px #a09ff5, 0 0 20px #78bdf5, 0 0 30px #7ec0cc;
+    }
+}
+
+.mutual-names {
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 150px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    text-align: center; 
+}
+
+/* Add Friend Button */
+.addfriend-button {
+    background-color: #38086e;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    flex-shrink: 0; 
+    text-align: center;
+}
+
+.addfriend-button:hover {
+    background-color: #0b1466;
+}
+
+/* <---------------------------------------- About Page --------------------------------------> */
+.about-body {
+    display: flex;
+    height: auto;
+    margin: 0;
+    overflow-y: auto; 
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #86e9e9, #dbe6f1, #d094e7); 
+    background-size: 200% 200%; 
+    animation: gradient-animation 10s ease infinite; 
+}
+
+/* Keyframes for the background gradient animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Sidebar */
+.about-sidebar {
+    width: 250px;
+    background-color: #EAEAEA;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed; 
+    height: 100vh; 
+    top: 0; 
+    left: 0; 
+    z-index: 10; 
+}
+
+/* Main content area */
+.about-container {
+    margin-left: 700px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background: rgba(245, 245, 255, 0.9); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    overflow-y: auto; 
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    animation: about-color-change 4s linear infinite;
+}
+
+.highlight {
+            color: #410875;
+            font-weight: bold;
+}
+
+@keyframes about-color-change {
+    0% { color: #6ee4e4; }
+    30% { color: #639dcc; }
+    50% { color: #bb80ff; }
+    50% { color: #eb6ae0; }
+    100% { color: #171518; }
+}
+
+
+/* Navbar styling similar to the homepage */
+.about-sidebar {
+    background-color: #f7f8fa;
+}
+
+.about-sidebar .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.about-sidebar .navbar a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #4d85d3, #c6c8c9);
+    text-decoration: none;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-color 0.3s ease;
+}
+
+.about-sidebar .navbar a:hover {
+    background: linear-gradient(135deg, #985cc9, #D1BCE3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-color: #E0E0E0;
+    padding-left: 25px;
+}
+
+/* Hover effect for question-answer container */
+.qa-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.qa-container:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+}
+
+.qa-container h3 {
+    margin-left: 10px;
+    text-align: left;
+    font-style: oblique;
+}
+
+/* About List Styles */
+.about-list {
+    text-align: left;
+    list-style-type: disc;
+    margin-top: 20px;
+    padding-left: 40px;
+    line-height: 2;
+}
+
+/* Screenshot Container */
+.screenshot-container {
+    margin-top: 30px;
+}
+
+.screenshot-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+.sidebar-about-footer {
+    font-size: 0.9rem;
+    text-align: flex-start;
+    color: #7324c2;
+    font-weight: bold;
+    margin-top: 600px;
+}
+
+/* -------------------------------------------------------Update Form------------------------------------------------------------*/
+/* Sidebar Update Form */
+.sidebar-update-form {
+    position: relative;
+    background-color: white; 
+    margin: 20px 0; 
+    width: 180px; 
+    padding: 15px;
+    overflow: hidden; 
+    text-align: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* Remove underline */
+    background-image: linear-gradient(135deg, #f5f6f8, #f5f6f8, #985cc9); 
+}
+
+.sidebar-update-form label {
+    color: transparent; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(135deg, #4d85d3, #985cc9);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Form Field Styling */
+.sidebar-update-form input[type="text"] {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+/* Form Submit Button */
+.sidebar-update-form button {
+    background-color: #073fa7;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar-update-form button:hover {
+    background-color: #37529c;
+}
+
+/* Hover effect for the entire form */
+.sidebar-update-form:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
